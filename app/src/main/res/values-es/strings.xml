@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Boton de Panico</string>
+    <string name="title_activity_maps">Mapa</string>
+    <string name="latitud">Latitud:</string>
+    <string name="address_will_display_shortly">La dirección se mostrará en breve:</string>
+    <string name="you_are_here">Estás aquí:</string>
+    <string name="longitud">Longitud:</string>
+    <string name="longitud_hint">Longitud</string>
+    <string name="latitud_hint">Latitud</string>
+    <string name="press_to_send_alert">Presiona Para Enviar Alerta</string>
+</resources>
