@@ -8,4 +8,37 @@
     <string name="longitud_hint">Longitud</string>
     <string name="latitud_hint">Latitud</string>
     <string name="press_to_send_alert">Presiona Para Enviar Alerta</string>
+    <string name="title_activity_view_map">Mapa</string>
+
+
+    <string-array name="cat1">
+        <item>Seleccionar</item>
+        <item>Robo</item>
+        <item>Acoso</item>
+        <item>Asalto</item>
+        <item>Robo, asalto, robo a casa-habitacion</item>
+        <item>Homicidio</item>
+        <item>Robo de autos</item>
+        <item>Destrucción de propiedad</item>
+        <item>Secuestro</item>
+        <item>Atropello</item>
+    </string-array>
+
+    <string-array name="cat2">
+        <item>Seleccionar</item>
+        <item>Vandalismo</item>
+        <item>Problema civil</item>
+        <item>Iluminación</item>
+        <item>Mantenimiento de áreas públicas</item>
+        <item>Grafiti</item>
+        <item>Relacionado al alcohol</item>
+    </string-array>
+
+    <string-array name="cat3">
+        <item>Seleccionar</item>
+        <item>Drogas / Narcóticos</item>
+        <item>Vehículo estacionado en ubicación extraña</item>
+        <item>Paquete / equipaje desatendido</item>
+        <item>Alguien presta atención inusual a las instalaciones.</item>
+    </string-array>
 </resources>

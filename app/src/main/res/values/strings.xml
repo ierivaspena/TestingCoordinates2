@@ -9,4 +9,36 @@
     <string name="latitud_hint">Latitude</string>
     <string name="press_to_send_alert">Press To Send Alert</string>
     <string name="title_activity_view_map">Map</string>
+
+    <string-array name="cat1">
+        <item>Select</item>
+        <item>Theft</item>
+        <item>Harassment</item>
+        <item>Assault</item>
+        <item>Burglary</item>
+        <item>Homicide</item>
+        <item>Auto theft</item>
+        <item>Property destruction</item>
+        <item>Kidnapping</item>
+        <item>Ran over</item>
+    </string-array>
+
+    <string-array name="cat2">
+        <item>Select</item>
+        <item>Vandalism</item>
+        <item>Civil Problem</item>
+        <item>Illumination</item>
+        <item>Public Areas Maintenance</item>
+        <item>Graffiti</item>
+        <item>Alcohol-related</item>
+    </string-array>
+
+    <string-array name="cat3">
+        <item>Select</item>
+        <item>Drug/Narcotic</item>
+        <item>Vehicle parked in odd location</item>
+        <item>Package/luggage unattended</item>
+        <item>Someone pays unusual attention to facilities</item>
+
+    </string-array>
 </resources>

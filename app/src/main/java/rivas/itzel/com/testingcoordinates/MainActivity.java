@@ -89,6 +89,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
             }
         });
         viewMap = findViewById(R.id.viewMap);
+        report = findViewById(R.id.report);
 
         viewMap.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,7 +98,15 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
                 startActivity(logInIntent);
             }
         });
+        report.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent logInIntent = new Intent(MainActivity.this, Category.class);
+                startActivity(logInIntent);
+            }
+        });
     }
+
     private void locationUser(double latitud, double longitud, long timeStamp) {
 
         compositeDisposable.add(myService.locationUser(latitud, longitud,timeStamp)

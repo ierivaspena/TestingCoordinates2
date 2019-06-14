@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Category">
+
+    <Button
+        android:id="@+id/cat1button"
+        android:layout_width="388dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="176dp"
+        android:layout_marginEnd="7dp"
+        android:text="Criminal Activity"
+        android:background="#3DBDE4"
+        android:textColor="#ffffff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="7dp" />
+
+    <Button
+        android:id="@+id/cat2button"
+        android:layout_width="388dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="7dp"
+        android:background="#077392"
+        android:textColor="#fff"
+        android:text="Perceived Danger"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cat3button"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="7dp" />
+
+    <Button
+        android:id="@+id/cat3button"
+        android:layout_width="388dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="13dp"
+        android:text="Suspicious Circumstances"
+        android:background="#0C99C5"
+        android:textColor="#fff"
+        app:layout_constraintBottom_toTopOf="@+id/cat2button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cat1button"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="7dp" />
+
+</android.support.constraint.ConstraintLayout>
