@@ -8,4 +8,5 @@
     <string name="longitud_hint">Longitude</string>
     <string name="latitud_hint">Latitude</string>
     <string name="press_to_send_alert">Press To Send Alert</string>
+    <string name="title_activity_view_map">Map</string>
 </resources>

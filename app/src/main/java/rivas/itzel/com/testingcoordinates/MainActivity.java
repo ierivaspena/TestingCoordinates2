@@ -42,6 +42,8 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
     List<Address> addresses;
     TextView addressText;
     ImageButton button;
+    Button viewMap;
+    Button report;
     long timeStamp;
     double lat, lon;
     protected LocationManager locationManager;
@@ -86,7 +88,15 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
 
             }
         });
+        viewMap = findViewById(R.id.viewMap);
 
+        viewMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent logInIntent = new Intent(MainActivity.this, ViewMap.class);
+                startActivity(logInIntent);
+            }
+        });
     }
     private void locationUser(double latitud, double longitud, long timeStamp) {
 

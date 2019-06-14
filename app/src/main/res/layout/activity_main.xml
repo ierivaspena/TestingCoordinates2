@@ -142,7 +142,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/report"
         android:layout_width="385dp"
         android:layout_height="65dp"
         android:layout_marginStart="8dp"
@@ -165,7 +165,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/viewMap"
         android:layout_width="385dp"
         android:layout_height="65dp"
         android:layout_marginStart="8dp"
