@@ -7,6 +7,7 @@ import retrofit2.http.POST;
 
     public interface MyService {
         @POST("location")
+
         @FormUrlEncoded
         Observable<String> locationUser(@Field("latitude") double latitude,
                                         @Field("longitude") double longitude,
