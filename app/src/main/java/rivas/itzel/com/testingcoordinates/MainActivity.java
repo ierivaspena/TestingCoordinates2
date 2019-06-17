@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
     TextView longView, latView;
     List<Address> addresses;
     TextView addressText;
-    ImageButton button;
+    ImageButton alert;
     Button viewMap;
     Button report;
     long timeStamp;
@@ -77,8 +77,9 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         addressText = findViewById(R.id.editText3);
         latView = findViewById(R.id.latitudView);
         longView = findViewById(R.id.longitudView);
-        button = findViewById(R.id.imageButton);
-        button.setOnClickListener(new View.OnClickListener() {
+        alert = findViewById(R.id.imageButton);
+
+        alert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 timeStamp=System.currentTimeMillis();
@@ -88,16 +89,9 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
 
             }
         });
-        viewMap = findViewById(R.id.viewMap);
         report = findViewById(R.id.report);
 
-        viewMap.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent logInIntent = new Intent(MainActivity.this, ViewMap.class);
-                startActivity(logInIntent);
-            }
-        });
+
         report.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
