@@ -95,8 +95,10 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         report.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent logInIntent = new Intent(MainActivity.this, Category.class);
-                startActivity(logInIntent);
+                Intent intent = new Intent(MainActivity.this, Category.class);
+                intent.putExtra("latitude",lat);
+                intent.putExtra("longitude", lon);
+                startActivity(intent);
             }
         });
     }

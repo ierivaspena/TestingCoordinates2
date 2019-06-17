@@ -12,6 +12,14 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.functions.Consumer;
+import io.reactivex.schedulers.Schedulers;
+import retrofit2.Retrofit;
+import rivas.itzel.com.testingcoordinates.Retrofit.MyService;
+import rivas.itzel.com.testingcoordinates.Retrofit.RetrofitClient;
+
 public class Category extends AppCompatActivity {
 
     private Button submit;
@@ -24,15 +32,26 @@ public class Category extends AppCompatActivity {
     private ListView listView;
     EditText textDescription;
     EditText textOther;
+    long timeStamp;
+    String description;
     private final int INFRASTRUCTURE_INCIDENT = 2;
+
+    CompositeDisposable compositeDisposable = new CompositeDisposable();
+    MyService myService;
+
+    @Override
+    protected void onStop() {
+        compositeDisposable.clear();
+        super.onStop();
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
 
         Intent intent = getIntent();
-        lat = intent.getDoubleExtra("latitud", 0);
-        lon = intent.getDoubleExtra("longitud", 0);
+        lat = intent.getDoubleExtra("latitude", 0);
+        lon = intent.getDoubleExtra("longitude", 0);
 
         Toast.makeText(this, "lat " + lat, Toast.LENGTH_SHORT).show();
 
@@ -40,6 +59,10 @@ public class Category extends AppCompatActivity {
         listView = findViewById(R.id.listView);
         textDescription = findViewById(R.id.desc);
         textOther = findViewById(R.id.other);
+
+        //Init Service
+        Retrofit retrofitClient = RetrofitClient.getInstance();
+        myService = retrofitClient.create(MyService.class);
 
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,
                 getResources().getStringArray(R.array.infrastructure));
@@ -49,6 +72,7 @@ public class Category extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 incident = arrayInc[position];
+
             }
         });
         submit.setOnClickListener(view -> {
@@ -58,9 +82,25 @@ public class Category extends AppCompatActivity {
 
     public void onClick(){
         // Send to Data base
+        timeStamp =System.currentTimeMillis();
+        description = textDescription.getText().toString();
+
+        descriptionReports(lat, lon, timeStamp, incident, description, INFRASTRUCTURE_INCIDENT);
 
         Intent intent = new Intent(Category.this, Submit.class);
         startActivity(intent);
+    }
+    private void descriptionReports(double latitud, double longitud, long timeStamp, String incident, String description, int color) {
+
+        compositeDisposable.add(myService.descriptionReports(latitud, longitud,timeStamp, incident, description, color)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<String>() {
+                    @Override
+                    public void accept(String response) throws Exception {
+                        Toast.makeText(Category.this, "" + response, Toast.LENGTH_SHORT).show();
+                    }
+                }));
     }
 }
 
