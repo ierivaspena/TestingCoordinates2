@@ -29,7 +29,7 @@
         android:layout_width="394dp"
         android:layout_height="383dp"
         android:padding="5dp"
-        android:background="@drawable/infrastructre"
+        android:background="@drawable/transparent_infrastructure_icon"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="16dp" />
@@ -128,6 +128,4 @@
         app:layout_constraintBottom_toTopOf="@+id/cat2button"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="MissingConstraints" />
-
-
 </android.support.constraint.ConstraintLayout>
