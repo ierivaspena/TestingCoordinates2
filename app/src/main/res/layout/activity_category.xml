@@ -32,7 +32,8 @@
         android:background="@drawable/transparent_infrastructure_icon"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="16dp" />
+        tools:layout_editor_absoluteY="16dp"
+        />
 
     <TextView
         android:id="@+id/textView4"
