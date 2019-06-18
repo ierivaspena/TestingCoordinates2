@@ -7,12 +7,10 @@ import retrofit2.http.POST;
 
     public interface MyService {
         @POST("location")
-
         @FormUrlEncoded
         Observable<String> locationUser(@Field("latitude") double latitude,
                                         @Field("longitude") double longitude,
                                         @Field("timeStamp")long timeStamp);
-
         @POST("description")
         @FormUrlEncoded
         Observable<String> descriptionReports(@Field("latitude") double latitude,
@@ -21,5 +19,4 @@ import retrofit2.http.POST;
                                               @Field("incident") String incident,
                                               @Field("description") String description,
                                               @Field("color") int color);
-
 }

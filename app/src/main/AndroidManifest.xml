@@ -19,8 +19,9 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".Submit"></activity>
-        <activity android:name=".SelectIncident" />
-        <activity android:name=".Category" />
+        <activity android:name=".Category"
+            android:windowSoftInputMode="adjustPan"/>
+
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").

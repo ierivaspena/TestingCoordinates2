@@ -32,6 +32,7 @@ public class Category extends AppCompatActivity {
     private ListView listView;
     EditText textDescription;
     EditText textOther;
+    TextView display;
     long timeStamp;
     String description;
     private final int INFRASTRUCTURE_INCIDENT = 2;
@@ -48,6 +49,7 @@ public class Category extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
+        this.setTitle("Select Incident");
 
         Intent intent = getIntent();
         lat = intent.getDoubleExtra("latitude", 0);
@@ -59,7 +61,7 @@ public class Category extends AppCompatActivity {
         listView = findViewById(R.id.listView);
         textDescription = findViewById(R.id.desc);
         textOther = findViewById(R.id.other);
-
+        display = findViewById(R.id.display);
         //Init Service
         Retrofit retrofitClient = RetrofitClient.getInstance();
         myService = retrofitClient.create(MyService.class);
@@ -72,7 +74,7 @@ public class Category extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 incident = arrayInc[position];
-
+                display.setText(incident);
             }
         });
         submit.setOnClickListener(view -> {

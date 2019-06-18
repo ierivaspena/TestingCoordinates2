@@ -43,4 +43,7 @@ dependencies {
     //Material Edit Text
     implementation 'com.rengwuxian.materialedittext:library:2.1.4'
 
+    //location
+    implementation 'com.google.android.gms:play-services-location:16.0.0'
+
 }
