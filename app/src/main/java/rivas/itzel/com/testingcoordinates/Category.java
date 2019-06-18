@@ -49,7 +49,7 @@ public class Category extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
-        this.setTitle("Select Incident");
+        this.setTitle(R.string.selectinc);
 
         Intent intent = getIntent();
         lat = intent.getDoubleExtra("latitude", 0);

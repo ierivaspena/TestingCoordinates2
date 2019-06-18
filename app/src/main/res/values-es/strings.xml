@@ -10,35 +10,28 @@
     <string name="press_to_send_alert">Presiona Para Enviar Alerta</string>
     <string name="title_activity_view_map">Mapa</string>
 
+    <string name="submit">Enviar</string>
+    <string name="other">Otro</string>
+    <string name="you_selected">Seleccionaste: </string>
+    <string name="e_g_traffic_light">P.ej. Semáforo</string>
+    <string name="description">Descripción</string>
+    <string name="e_g_traffic_light_is_not_working">P.ej. El semáforo no funciona.</string>
+    <string name="report_submitted">Reporte Enviado</string>
+    <string name="thank_you_submit">Gracias por enviar el reporte</string>
+    <string name="selectinc">Seleccionar incidente</string>
 
-    <string-array name="cat1">
-        <item>Seleccionar</item>
-        <item>Robo</item>
-        <item>Acoso</item>
-        <item>Asalto</item>
-        <item>Robo, asalto, robo a casa-habitacion</item>
-        <item>Homicidio</item>
-        <item>Robo de autos</item>
-        <item>Destrucción de propiedad</item>
-        <item>Secuestro</item>
-        <item>Atropello</item>
-    </string-array>
 
-    <string-array name="cat2">
-        <item>Seleccionar</item>
-        <item>Vandalismo</item>
-        <item>Problema civil</item>
-        <item>Iluminación</item>
-        <item>Mantenimiento de áreas públicas</item>
+    <string-array name="infrastructure">
+        <item>Calle / Acera</item>
+        <item>Semáforos</item>
+        <item>Drenaje</item>
+        <item>Agua</item>
+        <item>Sistema electrico</item>
+        <item>Transporte</item>
+        <item>Árboles frondosos</item>
         <item>Grafiti</item>
-        <item>Relacionado al alcohol</item>
-    </string-array>
-
-    <string-array name="cat3">
-        <item>Seleccionar</item>
-        <item>Drogas / Narcóticos</item>
-        <item>Vehículo estacionado en ubicación extraña</item>
-        <item>Paquete / equipaje desatendido</item>
-        <item>Alguien presta atención inusual a las instalaciones.</item>
+        <item>Gotera de agua</item>
+        <item>Basura</item>
+        <item>Inundación</item>
     </string-array>
 </resources>

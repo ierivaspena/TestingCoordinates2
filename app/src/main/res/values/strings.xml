@@ -9,6 +9,15 @@
     <string name="latitud_hint">Latitude</string>
     <string name="press_to_send_alert">Press To Send Alert</string>
     <string name="title_activity_view_map">Map</string>
+    <string name="submit">Submit</string>
+    <string name="other">Other</string>
+    <string name="you_selected">You selected</string>
+    <string name="e_g_traffic_light">E.g. Traffic Light</string>
+    <string name="description">Description</string>
+    <string name="e_g_traffic_light_is_not_working">E.g. Traffic light is not working.</string>
+    <string name="report_submitted">Report Submitted</string>
+    <string name="thank_you_submit">Thank you submit</string>
+    <string name="selectinc">Select Incident</string>
 
     <string-array name="infrastructure">
         <item>Street/Sidewalk</item>
