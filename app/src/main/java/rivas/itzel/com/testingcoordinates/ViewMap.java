@@ -60,16 +60,6 @@ public class ViewMap extends FragmentActivity implements OnMapReadyCallback, Loc
         }
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 2, this);
-//        confirm.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent i = new Intent(ViewMap.this, ReportCategory.class);
-//                i.putExtra("latitud", lat);
-//                i.putExtra("longitud", lon);
-//
-//                startActivity(i);
-//            }
-//        });
     }
 
     @Override

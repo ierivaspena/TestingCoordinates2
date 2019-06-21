@@ -21,10 +21,6 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
-
 import java.util.List;
 import java.util.Locale;
 
@@ -42,7 +38,6 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
     List<Address> addresses;
     TextView addressText;
     ImageButton alert;
-    Button viewMap;
     Button report;
     long timeStamp;
     double lat, lon;
@@ -61,6 +56,8 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Check for permissions from user to get current location
         if (ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getApplicationContext(),
                 android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -78,7 +75,11 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         latView = findViewById(R.id.latitudView);
         longView = findViewById(R.id.longitudView);
         alert = findViewById(R.id.imageButton);
+        report = findViewById(R.id.report);
 
+        /*
+        When user clicks the alert button the system gets the exact time when alert b was pressed
+         */
         alert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -86,15 +87,15 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
                 lat = Double.parseDouble(latView.getText().toString());
                 lon = Double.parseDouble(longView.getText().toString());
                 locationUser(lat, lon, timeStamp);
-
             }
         });
-        report = findViewById(R.id.report);
 
-
+        // When user wants to create a report related to infrastructure it will get user current location and send it to
+        // the Category activity
         report.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Intents are needed to move between activities (Android screens)
                 Intent intent = new Intent(MainActivity.this, Category.class);
                 intent.putExtra("latitude",lat);
                 intent.putExtra("longitude", lon);
@@ -103,6 +104,9 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         });
     }
 
+    /*
+    Method to send user coordinates to database
+     */
     private void locationUser(double latitud, double longitud, long timeStamp) {
 
         compositeDisposable.add(myService.locationUser(latitud, longitud,timeStamp)
@@ -116,6 +120,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
                 }));
     }
 
+    // Method to get the user current location
     @Override
     public void onLocationChanged(Location location) {
         lat =location.getLatitude();
@@ -123,12 +128,12 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         latView.setText(Double.toString(lat));
         longView.setText(Double.toString(lon));
         try {
+            // Geocoder translates coordinates into a street name
             Geocoder geocoder = new Geocoder(this, Locale.getDefault());
             addresses = geocoder.getFromLocation(lat, lon, 1);
             addressText.setText(addressText.getText() + "\n"+addresses.get(0).getAddressLine(0));
-//            Toast.makeText(this,  "lat " + lat + " lon " + lon, Toast.LENGTH_SHORT).show();
         }catch(Exception e) {
-
+            e.printStackTrace();
         }
 
     }
