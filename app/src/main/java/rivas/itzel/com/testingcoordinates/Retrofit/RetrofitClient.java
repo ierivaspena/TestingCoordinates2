@@ -8,6 +8,7 @@ public class RetrofitClient {
 
     private static Retrofit instance;
 
+    //connects to local IP Address and port where the server is located
     public static Retrofit getInstance() {
         if(instance == null)
             instance = new Retrofit.Builder()
