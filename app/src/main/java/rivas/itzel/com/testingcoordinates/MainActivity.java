@@ -1,5 +1,10 @@
 package rivas.itzel.com.testingcoordinates;
-
+/*
+Program to find a user current location (longitude & latitude)
+Location gets send to a MongoDB Atlas
+This application also allows a user to create a report
+related to an infrastructure issue and then it gets send to MongoDB Atlas as well.
+ */
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
